@@ -1,16 +1,51 @@
+<?php
+$idStranky = "domu"; //kdyz prijdu poprvy chci domu
+
+$poleStranek = array(
+  "domu" => [
+    "id" => "domu",
+    "titulek" => "Primapenzion",
+    "obrazek" => "primapenzion-main.jpg",
+    "menu" => "Domů"
+  ],
+"galerie" => [
+    "id" => "galerie",
+    "titulek" => "Fotogalerie",
+    "obrazek" => "primapenzion-pool-min.jpg",
+    "menu" => "Foto"
+  ],
+"rezervace" => [
+    "id" => "rezervace",
+    "titulek" => "Rezervace",
+    "obrazek" => "primapenzion-room.jpg",
+    "menu" => "Chci pokoj"
+  ],
+"kontakt" => [
+    "id" => "kontakt",
+    "titulek" => "Kontakt",
+    "obrazek" => "primapenzion-room2.jpg",
+    "menu" => "Napište nám"
+  ]
+);
+
+if (array_key_exists("id-stranky", $_GET)) {
+  $idStranky = $_GET["id-stranky"];
+}
+?>
+
 <!DOCTYPE html>
 <html lang="cs">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Primapenzion</title>
+  <title><?php echo $poleStranek [$idStranky]["titulek"]; ?></title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"><!-- tady sem si vložila z fontů google  -->
   <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
-  <!-- favicona navázaná z galerie sdf -f->
+  <!-- favicona navázaná z galerie -->
 </head>
 <body>
   <header>
@@ -23,44 +58,20 @@
             <a href="#" target="_blank"><i class="fa-brands fa-square-x-twitter"></i></a>
           </div>
       </div>
-      <a href="index.html" class="logo">Prima<br> PENZION</a>
-      <div class="menu">
-        <ul>
-          <li><a href="index.html">Domů</a></li>
-          <li><a href="kontakt.html">kontakt</a></li>
-          <li><a href="galerie.html">galerie</a></li>
-          <li><a href="rezervace.html">rezervace</a></li>
-        </ul>
-      </div>
+      <a href="index.php" class="logo">Prima<br> PENZION</a>
+      <?php require "./menu.php"; ?>
     </div>
     
-  <img src="img/primapenzion-main.jpg" alt="PrimaPenzion">
+  <img src="<?php echo "./img/{$poleStranek [$idStranky]["obrazek"]}"?>" alt="PrimaPenzion">
 
   </header>
-  <section>
-    
-  <div class="info">
-    <div class="container">
-      <h1>PENZION A RESTAURACE</h1>
-
-      <h2>Inspirováno krásnými věcmi.</h2>
-
-      <p>Hledáte ubytování v západních Čechách nebo dokonce klidný penzion v západních Čechách? Pak jste na správném místě. Rodinný penzion Žuhansta nabízí kromě příjemného a levného ubytování i celou řadu možností pro pořádání společenské akcí či výletů po okolní přírodě (oblast řeky Berounky), která je na seznamu UNESCO.</p>
-    </div>
-  </div>
-  </section>
+  <?php
+  require_once "./$idStranky.html"; //tady jsme nalinkovali soubor kontakt pomocí relativni cesty
+  ?>
 
   <footer>
-    <div class="pata">
-      <div class="menu">
-      <ul>
-        <li><a href="index.html">Domů</a></li>
-        <li><a href="kontakt.html">kontakt</a></li>
-        <li><a href="galerie.html">galerie</a></li>
-        <li><a href="rezervace.html">rezervace</a></li>
-      </ul>
-      </div>
-    
+     <div class="pata">
+     <?php require "./menu.php"; ?>    
 
     <a href="index.html" class="logo">Prima<br> PENZION</a>
     <div class="pataText">
