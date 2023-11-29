@@ -1,7 +1,9 @@
 <?php
-$idStranky = "domu"; //kdyz prijdu poprvy chci domu
-
 require_once "./data.php";
+
+$idStranky = array_keys($poleStranek)[0]; //kdyz prijdu poprvy chci domu
+
+
 
 if (array_key_exists("id-stranky", $_GET)) {
   $idStranky = $_GET["id-stranky"];
@@ -41,7 +43,9 @@ if (array_key_exists("id-stranky", $_GET)) {
 
   </header>
   <?php
-  require_once "./$idStranky.html"; //tady jsme nalinkovali soubor kontakt pomocí relativni cesty
+  echo $poleStranek[$idStranky]->getObsah();
+  
+  //require_once "./$idStranky.html"; //tady jsme nalinkovali soubor kontakt pomocí relativni cesty
   ?>
 
   <footer>
