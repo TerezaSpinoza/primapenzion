@@ -14,4 +14,4 @@ INSERT INTO stranka SET id="kocka", titulek="mnau", menu="cici", obrazek="primap
 SELECT * from stranka;
 delete from stranka;
 
-SELECT MAX(poradi) Maximalni_poradi FROM stranka
+SELECT MAX(poradi) max_poradi FROM stranka
