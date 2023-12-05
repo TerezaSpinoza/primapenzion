@@ -19,9 +19,17 @@ class Stranka {
     $this->id = $argId;
     $this->titulek = $argTitulek;
     $this->menu = $argMenu;
-    $this->obrazek = $argObrazek;
-    
+    $this->obrazek = $argObrazek; 
   }
+
+static function seradStranky($argPoleId) {
+  foreach ($argPoleId as $index => $idStranky) {
+    $prikaz = $GLOBALS["instanceDB"]->prepare("UPDATE stranka SET poradi=:poradi WHERE id=:id");
+    $prikaz->bindParam(":poradi", $index);
+    $prikaz->bindParam(":id", $idStranky);
+    $prikaz->execute();
+  }
+}
   
   function getTitulek() {
     return $this->titulek;
