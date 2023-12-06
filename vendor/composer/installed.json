@@ -145,6 +145,143 @@
             "install-path": "../components/jqueryui"
         },
         {
+            "name": "primakurzy/responsivefilemanager",
+            "version": "v2.0",
+            "version_normalized": "2.0.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PrimaKurzy-cz/responsivefilemanager.git",
+                "reference": "ccff78e069e4418dbf2f8b71145d93a7fdfc13e5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PrimaKurzy-cz/responsivefilemanager/zipball/ccff78e069e4418dbf2f8b71145d93a7fdfc13e5",
+                "reference": "ccff78e069e4418dbf2f8b71145d93a7fdfc13e5",
+                "shasum": ""
+            },
+            "time": "2023-02-25T12:26:45+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Josef Kyrian / PrimaKurzy.cz",
+                    "email": "josef.kyrian@primakurzy.cz"
+                }
+            ],
+            "description": "Responsive FileManager for TinyMCE and CKEditor (For Educational Purposes Only)",
+            "support": {
+                "issues": "https://github.com/PrimaKurzy-cz/responsivefilemanager/issues",
+                "source": "https://github.com/PrimaKurzy-cz/responsivefilemanager/tree/v2.0"
+            },
+            "install-path": "../primakurzy/responsivefilemanager"
+        },
+        {
+            "name": "primakurzy/shortcode",
+            "version": "v1.0",
+            "version_normalized": "1.0.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PrimaKurzy-cz/shortcode.git",
+                "reference": "0148ffb2448366b3871d6930b5c308220200fd1e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PrimaKurzy-cz/shortcode/zipball/0148ffb2448366b3871d6930b5c308220200fd1e",
+                "reference": "0148ffb2448366b3871d6930b5c308220200fd1e",
+                "shasum": ""
+            },
+            "require": {
+                "thunderer/shortcode": ">=0.7"
+            },
+            "time": "2022-06-01T07:32:42+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "primakurzy\\Shortcode\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Josef Kyrian / PrimaKurzy.cz",
+                    "email": "josef.kyrian@primakurzy.cz"
+                }
+            ],
+            "description": "For Educational Purposes Only",
+            "support": {
+                "issues": "https://github.com/PrimaKurzy-cz/shortcode/issues",
+                "source": "https://github.com/PrimaKurzy-cz/shortcode/tree/v1.0"
+            },
+            "install-path": "../primakurzy/shortcode"
+        },
+        {
+            "name": "thunderer/shortcode",
+            "version": "v0.7.5",
+            "version_normalized": "0.7.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thunderer/Shortcode.git",
+                "reference": "a4fee30613bd46efb421f8305aff0466a3268a99"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thunderer/Shortcode/zipball/a4fee30613bd46efb421f8305aff0466a3268a99",
+                "reference": "a4fee30613bd46efb421f8305aff0466a3268a99",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": ">=4.1",
+                "symfony/yaml": ">=2.0"
+            },
+            "suggest": {
+                "ext-dom": "if you want to use XML serializer",
+                "ext-json": "if you want to use JSON serializer",
+                "symfony/yaml": "if you want to use YAML serializer"
+            },
+            "time": "2022-01-13T18:53:33+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Thunder\\Shortcode\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tomasz Kowalczyk",
+                    "email": "tomasz@kowalczyk.cc"
+                }
+            ],
+            "description": "Advanced shortcode (BBCode) parser and engine for PHP",
+            "keywords": [
+                "bbcode",
+                "engine",
+                "library",
+                "parser",
+                "shortcode"
+            ],
+            "support": {
+                "issues": "https://github.com/thunderer/Shortcode/issues",
+                "source": "https://github.com/thunderer/Shortcode/tree/v0.7.5"
+            },
+            "install-path": "../thunderer/shortcode"
+        },
+        {
             "name": "tinymce/tinymce",
             "version": "5.10.9",
             "version_normalized": "5.10.9.0",

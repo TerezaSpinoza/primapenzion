@@ -6,4 +6,6 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'primakurzy\\Shortcode\\' => array($vendorDir . '/primakurzy/shortcode/src'),
+    'Thunder\\Shortcode\\' => array($vendorDir . '/thunderer/shortcode/src'),
 );

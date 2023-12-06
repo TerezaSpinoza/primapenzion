@@ -22,7 +22,14 @@
 <script src="./vendor/tinymce/tinymce/tinymce.js"></script>
 
 <!-- nastartovat knihovnu tinymce -->
+<!-- nastartovat knihovnu tinymce -->
 <script>
+    //toto je komentar
+
+    /*
+    toto je 
+    taky komentar
+    */
 
     tinymce.init({
         selector: "#motyl",
@@ -33,5 +40,10 @@
         plugins: ["code", "responsivefilemanager", "image", "anchor", "autolink", "autoresize", "link", "media", "lists"],
         toolbar1: 'formatselect | bold italic strikethrough | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat',
         toolbar2: "| responsivefilemanager | link | image media | forecolor backcolor  | print preview code ",
+        external_plugins: {
+            'responsivefilemanager': '<?php echo dirname($_SERVER['PHP_SELF']); ?>/vendor/primakurzy/responsivefilemanager/tinymce/plugins/responsivefilemanager/plugin.min.js',
+        },
+        external_filemanager_path: "<?php echo dirname($_SERVER['PHP_SELF']); ?>/vendor/primakurzy/responsivefilemanager/filemanager/",
+        filemanager_title: "File manager",
     });
 </script>

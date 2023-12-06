@@ -4,8 +4,30 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitdfb1d25149ec8e71b8e618187c863aaa
+class ComposerStaticInit790c2261ff582a845b89b2742c083d4a
 {
+    public static $prefixLengthsPsr4 = array (
+        'p' => 
+        array (
+            'primakurzy\\Shortcode\\' => 21,
+        ),
+        'T' => 
+        array (
+            'Thunder\\Shortcode\\' => 18,
+        ),
+    );
+
+    public static $prefixDirsPsr4 = array (
+        'primakurzy\\Shortcode\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/primakurzy/shortcode/src',
+        ),
+        'Thunder\\Shortcode\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/thunderer/shortcode/src',
+        ),
+    );
+
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
@@ -13,7 +35,9 @@ class ComposerStaticInitdfb1d25149ec8e71b8e618187c863aaa
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->classMap = ComposerStaticInitdfb1d25149ec8e71b8e618187c863aaa::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit790c2261ff582a845b89b2742c083d4a::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit790c2261ff582a845b89b2742c083d4a::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit790c2261ff582a845b89b2742c083d4a::$classMap;
 
         }, null, ClassLoader::class);
     }

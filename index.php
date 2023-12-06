@@ -1,4 +1,7 @@
 <?php
+//stahneme si knihovnu a pripojime autoload
+
+require_once "./vendor/autoload.php";
 require_once "./data.php";
 
 $idStranky = array_keys($poleStranek)[0]; //kdyz prijdu poprvy chci domu
@@ -43,8 +46,15 @@ if (array_key_exists("id-stranky", $_GET)) {
 
   </header>
   <?php
-  echo $poleStranek[$idStranky]->getObsah();
+
+
+  $surovyObsah = $poleStranek[$idStranky]->getObsah();
+        //surovy obsah v sobe ma znacky, ktere vypadaji takto [kocka]
+        //knihovna shorcode zkusi v surovem obsahu anji vsehcny tyhle znaky a nahradi je za require "kocka.php"
+        //prvni parametr je cesta k slozce kte jsou vsechny php soubory ulozeny a druhy paramentr je surovy obsah
+  $hotovyObsah = primakurzy\Shortcode\Processor::process("./moje-shortcody", $surovyObsah);
   
+  echo $hotovyObsah;
   //require_once "./$idStranky.html"; //tady jsme nalinkovali soubor kontakt pomocí relativni cesty
   ?>
 
